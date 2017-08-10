@@ -1,0 +1,22 @@
+---
+title: "Week3 Assignment"
+author: "by Josh Toh"
+date: "10/08/2017"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##Game of Thrones Ratings
+```{r, fig.height=4, warning=FALSE}
+suppressPackageStartupMessages(library(plotly))
+df <- read.csv("got.csv")
+p <- ggplot(data=df, aes(x=Episode, y=Rating, fill=Season)) + geom_bar(stat="identity")
+ggplotly(p)
+        
+```
+
